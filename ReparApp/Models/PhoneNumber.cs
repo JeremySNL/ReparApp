@@ -10,6 +10,8 @@ public class PhoneNumber
 
     [Required(ErrorMessage = "El id de la persona es requerida.")]
     public int PersonId { get; set; }
+    [ForeignKey("PersonId")]
+    public Person? Person { get; set; }
 
     [Required(ErrorMessage = "El id del tipo de numero de telefono es requerida.")]
     public int PhoneNumberTypeId { get; set; }
