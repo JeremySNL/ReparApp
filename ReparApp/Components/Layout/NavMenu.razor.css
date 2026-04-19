@@ -87,7 +87,9 @@
 /* Usuario */
 .user {
     font-size: 0.9rem;
-    opacity: 0.9;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 10px;
+    border-radius: 10px;
 }
 
 /* Logout */

@@ -8,9 +8,13 @@
 
     <nav class="navbar-menu">
         <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
-        <NavLink href="counter">Counter</NavLink>
-        <NavLink href="weather">Weather</NavLink>
-        <NavLink href="auth">Auth</NavLink>
+        <AuthorizeView>
+            <Authorized>
+                <NavLink href="counter">Counter</NavLink>
+                <NavLink href="weather">Weather</NavLink>
+                <NavLink href="auth">Auth</NavLink>
+            </Authorized>
+        </AuthorizeView>
     </nav>
 
     <div class="navbar-right">
@@ -19,7 +23,7 @@
                 <span class="user">@context.User.Identity?.Name</span>
                 <form action="Account/Logout" method="post">
                     <AntiforgeryToken />
-                    <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                    <input type="hidden" name="ReturnUrl" value="Account/Login" />
                     <button type="submit" class="logout">Logout</button>
                 </form>
             </Authorized>
